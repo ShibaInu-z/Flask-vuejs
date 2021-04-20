@@ -5,29 +5,28 @@
       v-bind:variant="alertVariant"
       v-bind:message="alertMessage">
     </alert>
-    <h1>Sign In</h1>
+    <h1>登录</h1>
     <div class="row">
       <div class="col-md-4">
         <form @submit.prevent="onSubmit">
           <div class="form-group">
-            <label for="username">Username</label>
+            <label for="username">用户名</label>
             <input type="text" v-model="loginForm.username" class="form-control" v-bind:class="{'is-invalid': loginForm.usernameError}" id="username" placeholder="">
             <div v-show="loginForm.usernameError" class="invalid-feedback">{{ loginForm.usernameError }}</div>
           </div>
           <div class="form-group">
-            <label for="password">Password</label>
+            <label for="password">密码</label>
             <input type="password" v-model="loginForm.password" class="form-control" v-bind:class="{'is-invalid': loginForm.passwordError}" id="password" placeholder="">
             <div v-show="loginForm.passwordError" class="invalid-feedback">{{ loginForm.passwordError }}</div>
           </div>
-          <button type="submit" class="btn btn-primary">Sign In</button>
+          <button type="submit" class="btn btn-primary">登录</button>
         </form>
       </div>
     </div>
     <br>
-    <p>New User? <router-link to="/register">Click to Register!</router-link></p>
+    <p> <router-link to="/register">新用户注册</router-link></p>
     <p>
-        Forgot Your Password?
-        <a href="#">Click to Reset It</a>
+        
     </p>
   </div>
 </template>
