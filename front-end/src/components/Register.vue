@@ -81,7 +81,7 @@ export default {
         return false
       }
 
-      const path = 'http://localhost:5000/api/users'
+      const path = 'http://192.168.3.31:5000/api/users'
       const payload = {
         username: this.registerForm.username,
         email: this.registerForm.email,
