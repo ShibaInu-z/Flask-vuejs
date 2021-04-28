@@ -6,7 +6,7 @@
       v-bind:variant="alert.alertVariant"
       v-bind:message="alert.alertMessage">
     </alert>
-    <button type="button" class="btn btn-primary">HomePage</button>
+    <button type="button" ><router-link to="/train">开始训练</router-link></button>
   </div>
 </template>
 
