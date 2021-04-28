@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/Home'
 import Login from '@/components/Login'
+import train from '@/components/train'
 import Register from '@/components/Register'
 import Profile from '@/components/Profile'
 import Ping from '@/components/Ping'
@@ -22,6 +23,11 @@ const router = new Router({
       path: '/login',
       name: 'Login',
       component: Login
+    },
+    {
+      path: '/train',
+      name: 'train ',
+      component: train
     },
     {
       path: '/register',
