@@ -80,7 +80,7 @@ export default {
         return false
       }
 
-      const path = 'http://192.168.3.31:5000/api/tokens'
+      const path = 'http://localhost:5000/api/tokens'
       // axios 实现Basic Auth需要在config中设置 auth 这个属性即可
       axios.post(path, {}, {
         auth: {
