@@ -84,3 +84,35 @@ class User(PaginatedAPIMixin, db.Model):
         if user is None or user.token_expiration < datetime.utcnow():
             return None
         return user
+
+
+class TrainRecord(PaginatedAPIMixin, db.Model):
+    """去除user_id"""
+    __tablename__ = 'trainRecords'
+    id = db.Column(db.Integer, primary_key=True)
+    app_name = db.Column(db.String(128), nullable=False)
+    utc_str = db.Column(db.String(128), nullable=False)
+    VGG_paras = db.Column(db.JSON) #存放JSON数据。
+    logs = db.Column(db.String(128)) # 存放链接好点？
+
+
+    def from_json(self, data):
+        self.utc_str = data.get('utc_str')
+        self.app_name = data.get('app_name')
+        self. VGG_paras = data.get(' VGG_paras')
+        self.logs = data.get('logs','')
+        return self
+
+    def to_dict(self):
+        data = {
+            'id': self.id,
+            'utc_str': self.utc_str,
+            'app_name': self.app_name,
+            ' VGG_paras': self. VGG_paras,
+            'logs': self.logs,
+        }
+
+        return data
+
+    def __repr__(self):
+        return '<TrainRecord {}>'.format(self.id)
